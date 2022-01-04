@@ -1,0 +1,13 @@
+"SQINC1 Personal Income Summary: Personal Income, Population, Per Capita Personal Income"
+"" 
+"Bureau of Economic Analysis" 
+"State or DC"
+"GeoFips","GeoName","LineCode","Description","2021:Q1","2021:Q2","2021:Q3"
+"00000","United States","1","Personal income (millions of dollars, seasonally adjusted)",21849045.3,20647729.3,20782826.8
+"00000","United States","2","Population (midperiod, persons) 1/",330092941,330290763,330587721
+"00000","United States","3","Per capita personal income (dollars) 2/",66191,62514,62866
+"Legend / Footnotes:"
+"1/ Midquarter population estimates by state are derived by BEA based on unpublished Census Bureau estimates of beginning-of-month population. Quarterly estimates for 2010-2021 reflect unpublished monthly population estimates available as of February 2021. These population estimates are based on the 2010 census. BEA will incorporate Census Bureau population estimates based on the 2020 census results when they become available."
+"2/ Per capita personal income is total personal income divided by total quarterly population estimates. BEA state per capita personal income statistics are calculated using BEA derived midquarter population estimates based on unpublished Census Bureau estimates of beginning-of-month population. These midquarter estimates are based on the 2010 census. BEA will incorporate Census Bureau population estimates based on the 2020 census results when they become available."
+"Note. Millions of dollars, seasonally adjusted at annual rates. All dollar estimates are in current dollars (not adjusted for inflation). Calculations are performed on unrounded data."
+"Last updated: December 17, 2021-- new statistics for 2021:Q3; revised statistics for 2021:Q1-2021:Q2."
