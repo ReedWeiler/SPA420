@@ -4,12 +4,23 @@ Repository for winter data science project
 
 ##Relationship between Vaccination and American Economy
 ---
+<<<<<<< Updated upstream
 authors: 
   -  Na Li^[American University]
   -  Reed Weiler^[American University]
   -  YunJen Tsai^[American University]
 date: "2022-01-09"
 abstract: "This is our informative abstract of fewer than 200 words. It describes what we investigate, how we investigate it, and what we find."
+=======
+Title: "Personal Income and COVID-19 Vaccination Rates"
+Author: 
+  -Na Li^[American University]
+  -Reed Weiler^[American University]
+  -YunJen Tsai^[American University]
+Date: "2022-01-09"
+Abstract:
+There is a growing media consensus that income might have something to do with vaccination rates, so we wanted to investigate whether there is any merit to these claims. Research on this topic could potentially aid in understanding how economic inequality poses a barrier to effective strategies for combating the pandemic, and inform future pandemic response strategies. 
+>>>>>>> Stashed changes
 output: 
   pdf_document:
     number_sections: true
