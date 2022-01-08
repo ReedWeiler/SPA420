@@ -58,7 +58,7 @@ There is a growing media consensus that income might have something to do with v
 # Data and Methods
 \label{section:data}
 
-Data is drawn from two separate sources. One data set contains personal income level (GDP) by state, the other contains total vaccination rates by state. 
+Data is drawn from two separate sources. One data set contains personal income level (GDP) by state, the other contains total vaccination rates by state. Our combined dataset has 50 observations, representing each of the 50 united states. 
 
 We chose to use a simple linear regression to test the relationship between income per capita and COVID-19 vaccination rates at a state level within the United States. In this analysis, the explanatory variable was income level, and the outcome variable was COVID-19 vaccination rates. We created a scatter plot to model the relationship between income and vaccination rate by state, displayed below.
 
