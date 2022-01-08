@@ -36,23 +36,26 @@ df <- read.csv()
 
 # Introduction
 
-In this section, we introduce the reader to the phenomenon we investigate. We describe the way in which our analysis contributes to an important intellectual debate, or how it answers a pressing political or social question. We introduce our hypotheses, data, and results. We signpost for the reader what's coming in the rest of the paper.
+There is a growing media consensus that income might have something to do with vaccination rates, so we wanted to investigate whether there is any merit to these claims. Research on this topic could potentially aid in understanding how economic inequality poses a barrier to effective strategies for combating the pandemic, and inform future pandemic response strategies. 
 
 
 # [Our Substance and Context Section Title Here]
 
-Here we go deeper into the intellectual debate, the political and social context of our investigation. To give the reader a clear sense of why we are writing this paper, we describe the relevant scholarly, technical, or popular literature.  We cite at least two published, peer-reviewed scholarly works. For example, we could cite @mooree20 or @moorav12, which we discussed in class.^[To cite a paper within parentheses, use, e.g., [@moore12].] We only cite others' work in our paper when it enhances the reader's understanding of what we, the authors of this paper, are doing.  We connect everything we cite to _our_ investigation; this is our original research, not a book report or an annotated bibliography.
 
-In order to integrate citations into the References section below, we add entries into our file `main.bib`. This is a plain-text file that we edit in RStudio. We store `main.bib` in the same folder as our paper's `.Rmd` and `.pdf` files. Its entries are formatted so that they can be knit to `.pdf`; see [https://j.mp/2UzTXEZ](https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex#The_bibliography_file) for example entries for articles, books, and miscellaneous. We can get these entries automatically from Google Scholar by turning on BibTeX in the Google Scholar Settings - Bibliography Manager.
+(Jenell) Talk about why we choose the two data sets and what methods that we plan to use to see the relations that we are trying to describe. 
+
+(Emphasize personal health benefits to boost COVID-19 vaccination rates: https://www.pnas.org/content/pnas/118/32/e2108225118.full.pdf)
+
+
+(Correlation Between Health and Wealth: https://militaryfamilieslearningnetwork.org/2019/08/08/correlations-between-health-and-wealth/)
 
 # Data and Methods
 \label{section:data}
 
-This section describes the data we analyze. We describe the source of the data, and its primary features. We describe the methods we use to answer our question and to test our hypotheses.
+Data is drawn from two separate sources. One data set contains personal income level (GDP) by state, the other contains total vaccination rates by state. Our combined dataset has 50 observations, representing each of the 50 united states. 
 
-If our data were `cars`, loaded in the chunk above, we could note that our data have `r nrow(cars)` observations.
+We chose to use a simple linear regression to test the relationship between income per capita and COVID-19 vaccination rates at a state level within the United States. In this analysis, the explanatory variable was income level, and the outcome variable was COVID-19 vaccination rates. We created a scatter plot to model the relationship between income and vaccination rate by state, displayed below.
 
-We cite the software we use. For example, we conduct our analysis using R version `r paste(R.version$major, R.version$minor, sep = ".")` [@rcoreteam21]. We rely on several elements of the `tidyverse` [@wickhamtidyverse].
 
 # [Our Results Section Title Here]
 
@@ -95,7 +98,7 @@ Using the `cars` data, we find that each unit of speed is associated with `r rou
 
 # Discussion
 
-We remind the reader what this paper was about, why it was important, and what we found. We reflect on limitations of the data or methods. If we have specific advice for someone picking up where we leave off, we provide that guidance. We avoid making trite statements like "more research should be done".
+One limitation of our data is that the CDC doesn’t specify whether the “total vaccination” data counts each dose of the vaccine as a separate instance of “vaccination”, nor does it specify how it would account for booster shots, etc. So, there is some ambiguity as to how to interpret the results of our analysis, since the outcome variable could potentially be measuring a variety of different scenarios. Future research should strive to distinguish between instances of single-dose vaccination, double-dose vaccination, inclusion of a booster shot, and/or non-vaccination status as separate categories so as to better isolate the statistical impact of income level on each distinct outcome. 
 
 # References 
 
