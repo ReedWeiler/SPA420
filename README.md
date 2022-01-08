@@ -2,9 +2,8 @@
 
 Repository for winter data science project 
 
-##Final Project Template
+##Relationship between Vaccination and American Economy
 ---
-  "Relations between Vaccination and American Economy"
 authors: 
   -  Na Li^[American University]
   -  Reed Weiler^[American University]
