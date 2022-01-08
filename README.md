@@ -102,3 +102,26 @@ Using the `cars` data, we find that each unit of speed is associated with `r rou
 We remind the reader what this paper was about, why it was important, and what we found. We reflect on limitations of the data or methods. If we have specific advice for someone picking up where we leave off, we provide that guidance. We avoid making trite statements like "more research should be done".
 
 # References 
+
+#Linear regression result
+> x <- df_out$`2021 Q3p Ratio`
+> y <- df_out$`Vaccination Ratio`
+> fit1 <- lm(y ~ x)
+> summary(fit1)
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.37372 -0.12425 -0.03765  0.12482  0.43398 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.58548    0.07471   21.22  < 2e-16 ***
+x            4.05829    1.02741    3.95  0.00025 ***
+---
+Signif. codes:  0 ．***・ 0.001 ．**・ 0.01 ．*・ 0.05 ．.・ 0.1 ． ・ 1
+
+Residual standard error: 0.1866 on 49 degrees of freedom
+Multiple R-squared:  0.2415,	Adjusted R-squared:  0.226 
+F-statistic:  15.6 on 1 and 49 DF,  p-value: 0.0002502
