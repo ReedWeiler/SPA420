@@ -4,8 +4,10 @@ author:
   -Na Li^[American University]
   -Reed Weiler^[American University]
   -Yun-Jen Tsai^[American University]
+  
 date: "2022-01-09"
-abstract: "This is our informative abstract of fewer than 200 words. It describes what we investigate, how we investigate it, and what we find."
+
+
 output: 
   pdf_document:
     number_sections: true
