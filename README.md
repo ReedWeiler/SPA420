@@ -1,15 +1,14 @@
 # SPA420
 
-repository for winter data science project 
-new changes
-Should we graph two data set first before we run the regression analysis
+Repository for winter data science project 
+
 ##Final Project Template
 ---
-  title: "Relations between Vaccination and American Economy"
-author: 
-  - Your Na Li^[American University]
-  - Your Reed Weiler^[American University]
-  - Your YunJen Tsai^[American University]
+  "Relations between Vaccination and American Economy"
+authors: 
+  -  Na Li^[American University]
+  -  Reed Weiler^[American University]
+  -  YunJen Tsai^[American University]
 date: "2022-01-09"
 abstract: "This is our informative abstract of fewer than 200 words. It describes what we investigate, how we investigate it, and what we find."
 output: 
