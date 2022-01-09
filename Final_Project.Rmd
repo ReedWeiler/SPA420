@@ -48,10 +48,6 @@ library(readxl)
 income <- read_excel("income Ratio.xlsx")
 colnames(income) <- c("State.Name", "Income")
 head(income)
-x <- df_out$`2021 Q3p Ratio`
-y <- df_out$`Vaccination Ratio`
-fit1 <- lm(x~y)
-summary(fit1)
 ```
 ```{r}
 vaccination <- read.csv("vaccination ratio.csv", fileEncoding = "UTF-8-BOM")
