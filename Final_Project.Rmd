@@ -26,10 +26,11 @@ knitr::opts_chunk$set(echo = TRUE)
 There is a growing media consensus that income might have something to do with vaccination rates, so we wanted to investigate whether there is any merit to these claims. Research on this topic could potentially aid in understanding how economic inequality poses a barrier to effective strategies for combating the pandemic, and inform future pandemic response strategies. 
 
 
-# [Our Substance and Context Section Title Here]
+# Context
 
 
 (Jenell) Talk about why we choose the two data sets and what methods that we plan to use to see the relations that we are trying to describe. 
+To see the relatio of how income impacts vaccination ration, we choose the 
 
 (Emphasize personal health benefits to boost COVID-19 vaccination rates: https://www.pnas.org/content/pnas/118/32/e2108225118.full.pdf)
 
@@ -43,19 +44,34 @@ Data is drawn from two separate sources. One data set contains personal income l
 
 We chose to use a simple linear regression to test the relationship between income per capita and COVID-19 vaccination rates at a state level within the United States. In this analysis, the explanatory variable was income level, and the outcome variable was COVID-19 vaccination rates. We created a scatter plot to model the relationship between income and vaccination rate by state, displayed below.
 
+The null hypothesis is  
 ```{r}
+<<<<<<< Updated upstream
 library(readxl)
 income <- read_excel("income Ratio.xlsx")
 colnames(income) <- c("State.Name", "Income")
 head(income)
+tail(income)
+View(income)
+=======
+library(tidyverse)
+df_out <- inner_join(Income_Ratio, vaccination_ratio)
+view(df_out)                     
+x <- df_out$`2021 Q3p Ratio`
+y <- df_out$`Vaccination Ratio`
+fit1 <- lm(x~y)
+summary(fit1)
+>>>>>>> Stashed changes
 ```
 ```{r}
 vaccination <- read.csv("vaccination ratio.csv", fileEncoding = "UTF-8-BOM")
 head(vaccination)
+View(vaccination)
 ```
 ```{r}
 dat <- merge(income, vaccination)
 head(dat)
+View(dat)
 ```
 
 # [Our Results Section Title Here]
@@ -66,17 +82,23 @@ Note that this section may be integrated into Section \ref{section:data}, if joi
 
 Our results for the `cars` data include estimating the linear model 
 
+<<<<<<< HEAD
 $$\text{Vaccination.Ratio}_i = \beta_0 + \beta_1 (\text{Speed}_i) + \epsilon_i.$$
 5 Extract the coefficient on Income:
+=======
+$$\text{Vaccination.Ratio}_i = \beta_0 + \beta_1 (\text{Income}_i) + \epsilon_i.$$
+
+>>>>>>> aa518f2571e62d2041bfc20b89c2a927f9e377bd
 ```{r echo=FALSE}
 lm_out <- lm(Vaccination.Ratio~Income, dat)
 ```
 
 ```{r}
-plot(Vaccination.Ratio~Income, dat)
+plot(Vaccination.Ratio~Income, xlim=c(0, 0.30), dat)
 abline(lm_out)
 ```
 
+<<<<<<< HEAD
 
 ```{r echo=FALSE, results='asis'}
 # We can print regression tables with xtable or stargazer:
@@ -92,11 +114,17 @@ income_coef <- coef(lm_out)["Income"]
 
 ```{r echo=FALSE, message=FALSE, results='asis'}
 # We can print regression tables with stargazer:
+=======
+>>>>>>> aa518f2571e62d2041bfc20b89c2a927f9e377bd
 stargazer::stargazer(lm_out, 
                      title = "regression result",
                      dep.var.caption = "Vaccination ratio",
                      digits = 2,
                      header = FALSE)
+
+```{r echo=FALSE, message=FALSE, results='asis'}
+# We can print regression tables with xtable or stargazer:
+
 ```
 
 
