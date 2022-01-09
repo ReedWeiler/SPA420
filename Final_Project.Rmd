@@ -39,7 +39,7 @@ There is a growing media consensus that income might have something to do with v
 # Data and Methods
 \label{section:data}
 
-Data is drawn from two separate sources. One data set contains personal income level (GDP) by state, the other contains total vaccination rates by state. Our combined dataset has 50 observations, representing each of the 50 united states. 
+Data is drawn from two separate sources. One data set contains personal income level (GDP) by state, the other contains total vaccination rates by state. Our combined dataset has 51 observations, representing each of the 50 united states, and 1 district. 
 
 We chose to use a simple linear regression to test the relationship between income per capita and COVID-19 vaccination rates at a state level within the United States. In this analysis, the explanatory variable was income level, and the outcome variable was COVID-19 vaccination rates. We created a scatter plot to model the relationship between income and vaccination rate by state, displayed below.
 
@@ -57,6 +57,7 @@ head(vaccination)
 dat <- merge(income, vaccination)
 head(dat)
 ```
+
 # [Our Results Section Title Here]
 
 Here, we explain and interpret our results. We try to learn as much as we can about our question as possible, given the data and analysis. We present our results clearly. We interpret them for the reader with precision and circumspection. We avoid making claims that are not substantiated by our data.
@@ -76,20 +77,7 @@ plot(Vaccination.Ratio~Income, dat)
 abline(lm_out)
 ```
 
-# Extract the coefficient on speed:
-```{r}
-income_coef <- coef(lm_out)["Income"]
-```
 
-Below we show the model estimates. The first table uses `xtable()`, the second uses `stargazer()` [@hlavac18].
-
-```{r echo=FALSE, message=FALSE, results='asis'}
-# We can print regression tables with xtable or stargazer:
-regr_table <- xtable::xtable(lm_out,
-                             digits = 2,
-                             caption = "regression result")
-print(regr_table, comment = FALSE)
-```
 
 ```{r echo=FALSE, message=FALSE, results='asis'}
 # We can print regression tables with xtable or stargazer:
@@ -101,7 +89,6 @@ stargazer::stargazer(lm_out,
 ```
 
 
-Using the `cars` data, we find that each unit of speed is associated with `r round(income_coef,1)` more units of distance.
 
 # Discussion
 
