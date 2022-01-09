@@ -1,0 +1,17 @@
+service <-
+read.table("https://jeffgill.org/files/jeffgill/files/service.dat_.txt",
+header=TRUE,row.names=1)
+
+library(tidyverse)
+df_out <- inner_join(Income_Ratio, vaccination_ratio)
+view(df_out)                     
+x <- df_out$`2021 Q3p Ratio`
+y <- df_out$`Vaccination Ratio`
+fit1 <- lm(x~y)
+summary(fit1)
+
+
+y = ax+b
+y = vaccination ratio
+x = personal income
+b = intercept

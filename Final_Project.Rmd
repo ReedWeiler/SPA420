@@ -46,12 +46,22 @@ We chose to use a simple linear regression to test the relationship between inco
 
 The null hypothesis is  
 ```{r}
+<<<<<<< Updated upstream
 library(readxl)
 income <- read_excel("income Ratio.xlsx")
 colnames(income) <- c("State.Name", "Income")
 head(income)
 tail(income)
 View(income)
+=======
+library(tidyverse)
+df_out <- inner_join(Income_Ratio, vaccination_ratio)
+view(df_out)                     
+x <- df_out$`2021 Q3p Ratio`
+y <- df_out$`Vaccination Ratio`
+fit1 <- lm(x~y)
+summary(fit1)
+>>>>>>> Stashed changes
 ```
 ```{r}
 vaccination <- read.csv("vaccination ratio.csv", fileEncoding = "UTF-8-BOM")
