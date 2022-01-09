@@ -18,22 +18,7 @@ bibliography: main.bib
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r echo=FALSE, message=FALSE}
-# This chunk might read our data.
-# It might clean the data, create new variables, etc.
-# Now our data are ready for our paper.
 
-# Because echo=FALSE, this chunk itself is not shown.
-# Because message=FALSE, any R messages from this chunk do not appear in our paper.
-
-data("cars")
-```
-
-```{r eval=FALSE, echo=FALSE}
-# Because eval=FALSE, this chunk is not run.
-
-df <- read.csv()
-```
 
 
 # Introduction
@@ -58,7 +43,20 @@ Data is drawn from two separate sources. One data set contains personal income l
 
 We chose to use a simple linear regression to test the relationship between income per capita and COVID-19 vaccination rates at a state level within the United States. In this analysis, the explanatory variable was income level, and the outcome variable was COVID-19 vaccination rates. We created a scatter plot to model the relationship between income and vaccination rate by state, displayed below.
 
-
+```{r}
+library(readxl)
+income <- read_excel("income Ratio.xlsx")
+colnames(income) <- c("State.Name", "Income")
+head(income)
+```
+```{r}
+vaccination <- read.csv("vaccination ratio.csv", fileEncoding = "UTF-8-BOM")
+head(vaccination)
+```
+```{r}
+dat <- merge(income, vaccination)
+head(dat)
+```
 # [Our Results Section Title Here]
 
 Here, we explain and interpret our results. We try to learn as much as we can about our question as possible, given the data and analysis. We present our results clearly. We interpret them for the reader with precision and circumspection. We avoid making claims that are not substantiated by our data.
@@ -67,13 +65,14 @@ Note that this section may be integrated into Section \ref{section:data}, if joi
 
 Our results for the `cars` data include estimating the linear model 
 
-$$\text{Distance}_i = \beta_0 + \beta_1 (\text{Speed}_i) + \epsilon_i.$$
+$$\text{Vaccination.Ratio}_i = \beta_0 + \beta_1 (\text{Speed}_i) + \epsilon_i.$$
 
 ```{r echo=FALSE}
-# Estimate a linear model:
-lm_out <- lm(dist ~ speed, data = cars)
+lm_out <- lm(Vaccination.Ratio~Income, dat)
+```
 # Extract the coefficient on speed:
-cars_speed_coef <- coef(lm_out)["speed"]
+```{r}
+income_coef <- coef(lm_out)["Income"]
 ```
 
 Below we show the model estimates. The first table uses `xtable()`, the second uses `stargazer()` [@hlavac18].
@@ -82,21 +81,21 @@ Below we show the model estimates. The first table uses `xtable()`, the second u
 # We can print regression tables with xtable or stargazer:
 regr_table <- xtable::xtable(lm_out,
                              digits = 2,
-                             caption = "Our Informative Caption")
-
+                             caption = "regression result")
 print(regr_table, comment = FALSE)
 ```
 
 ```{r echo=FALSE, message=FALSE, results='asis'}
 # We can print regression tables with xtable or stargazer:
 stargazer::stargazer(lm_out, 
-                     title = "Our Informative Title",
-                     dep.var.caption = "Outcome",
+                     title = "regression result",
+                     dep.var.caption = "Vaccination ratio",
                      digits = 2,
                      header = FALSE)
 ```
 
-Using the `cars` data, we find that each unit of speed is associated with `r round(cars_speed_coef, 1)` more units of distance.
+
+Using the `cars` data, we find that each unit of speed is associated with `r round(income_coef,1)` more units of distance.
 
 # Discussion
 
