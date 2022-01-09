@@ -70,6 +70,12 @@ $$\text{Vaccination.Ratio}_i = \beta_0 + \beta_1 (\text{Speed}_i) + \epsilon_i.$
 ```{r echo=FALSE}
 lm_out <- lm(Vaccination.Ratio~Income, dat)
 ```
+
+```{r}
+plot(Vaccination.Ratio~Income, dat)
+abline(lm_out)
+```
+
 # Extract the coefficient on speed:
 ```{r}
 income_coef <- coef(lm_out)["Income"]
