@@ -39,7 +39,7 @@ There is a growing media consensus that income might have something to do with v
 # Data and Methods
 \label{section:data}
 
-Data is drawn from two separate sources. One data set contains personal income level (GDP) by state, the other contains total vaccination rates by state. Our combined dataset has 50 observations, representing each of the 50 united states. 
+Data is drawn from two separate sources. One data set contains personal income level (GDP) by state, the other contains total vaccination rates by state. Our combined dataset has 51 observations, representing each of the 50 united states, and 1 district. 
 
 We chose to use a simple linear regression to test the relationship between income per capita and COVID-19 vaccination rates at a state level within the United States. In this analysis, the explanatory variable was income level, and the outcome variable was COVID-19 vaccination rates. We created a scatter plot to model the relationship between income and vaccination rate by state, displayed below.
 
@@ -48,6 +48,10 @@ library(readxl)
 income <- read_excel("income Ratio.xlsx")
 colnames(income) <- c("State.Name", "Income")
 head(income)
+x <- df_out$`2021 Q3p Ratio`
+y <- df_out$`Vaccination Ratio`
+fit1 <- lm(x~y)
+summary(fit1)
 ```
 ```{r}
 vaccination <- read.csv("vaccination ratio.csv", fileEncoding = "UTF-8-BOM")
